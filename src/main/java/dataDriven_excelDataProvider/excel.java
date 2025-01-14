@@ -1,5 +1,6 @@
 package dataDriven_excelDataProvider;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -25,6 +26,7 @@ public class excel {
             row = sheet.getRow(i+1);
             for(int j=0; j<colcount; j++)
             {
+                XSSFCell cell=row.getCell(j);
                 row.getCell(j);
             }
         }
