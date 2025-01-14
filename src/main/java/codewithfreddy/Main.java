@@ -12,8 +12,8 @@ import java.util.Iterator;
 
 public class Main {
 
-    //once column is identified then scan entire testcase column to identify purchase testcase row
-    //after you grab purchase testcase row - pull all the data of that row and feet into test
+
+
     public static void main(String[] args) throws IOException {
 
         FileInputStream fis = new FileInputStream("\"C:\\Users\\Freddy\\Desktop\\TestCases.xlsx\"");
@@ -41,6 +41,21 @@ public class Main {
                }
                k++;
               }
+                //once column is identified then scan entire testcase column to identify purchase testcase row
+                while (rows.hasNext())
+                {
+                    Row r=rows.next();
+                   if (r.getCell(column).getStringCellValue().equalsIgnoreCase("Purchase"))
+                   {
+                       //after you grab purchase testcase row - pull all the data of that row and feet into test
+                      Iterator<Cell> cv= r.cellIterator();
+                      while (cv.hasNext())
+                      {
+                          cv.next();
+                      }
+
+                   }
+                }
             }
         }
     }
